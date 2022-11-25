@@ -86,7 +86,7 @@ If both commands run successfully, we can confirm all permissions are setup corr
 1. To execute the ps1 script, open PowerShell terminal as Administrator and run the following command
 
 2. The script will prompt for CloudWatch dashboard name, provide a name and press enter.
-![Files](installer.jpg)
+![Install](installer.jpg)
 
 3. The Automation will configure the CloudWatch Agent, Start the CloudWatch Agent and Create the RDS Custom dashboard. You can confirm the creation of the dashboard by using the AWS CloudWatch Console
 
@@ -94,9 +94,9 @@ If both commands run successfully, we can confirm all permissions are setup corr
 
 ### View the CloudWatch Metrics
 Navigate to CloudWatch console and Click on Dashboard. This will show you the list of all dashboard.
-![Files](dash1.jpg)
-![Files](dash2.jpg)
-![Files](dash3.jpg)
+![Metric1](dash1.jpg)
+![Metric12](dash2.jpg)
+![Metric13](dash3.jpg)
 
 ## Contributors 
 - Arnab Saha 
