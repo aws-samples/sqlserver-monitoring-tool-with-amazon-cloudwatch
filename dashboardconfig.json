@@ -1,0 +1,332 @@
+{
+    "widgets": [
+        {
+            "height": 4,
+            "width": 6,
+            "y": 12,
+            "x": 18,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stat": "Sum",
+                "period": 60,
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "region": "rr-rr-rr",
+                "metrics": [
+                    [ { "expression": "m1_0 / PERIOD(m1_0) / 1024", "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "region": "rr-rr-rr" } ],
+                    [ "AWS/EBS", "VolumeReadBytes", "VolumeId", "vol-zzzzzz", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m1_0", "visible": false } ]
+                ],
+                "title": "Read Throughput (KiB/s)"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 12,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stat": "Sum",
+                "period": 60,
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "region": "rr-rr-rr",
+                "metrics": [
+                    [ { "expression": "m1_0 / PERIOD(m1_0) / 1024", "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "region": "rr-rr-rr" } ],
+                    [ "AWS/EBS", "VolumeWriteBytes", "VolumeId", "vol-zzzzzz", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m1_0", "visible": false, "region": "rr-rr-rr" } ]
+                ],
+                "title": "Write Throughput (KiB/s)"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 22,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stat": "Average",
+                "period": 60,
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "region": "rr-rr-rr",
+                "metrics": [
+                    [ "AWS/EBS", "VolumeQueueLength", "VolumeId", "vol-zzzzzz", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m1_0", "visible": true } ]
+                ],
+                "title": "Average queue length (Operations)"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 22,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stat": "Sum",
+                "period": 60,
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "region": "rr-rr-rr",
+                "metrics": [
+                    [ { "expression": "IF(m2_0 !=0, (m1_0 / m2_0) * 1000, 0)", "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "region": "rr-rr-rr" } ],
+                    [ "AWS/EBS", "VolumeTotalReadTime", "VolumeId", "vol-zzzzzz", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m1_0", "visible": false, "region": "rr-rr-rr" } ],
+                    [ "AWS/EBS", "VolumeReadOps", "VolumeId", "vol-zzzzzz", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m2_0", "visible": false, "region": "rr-rr-rr" } ]
+                ],
+                "title": "Average read latency (ms/op)"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 22,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stat": "Sum",
+                "period": 60,
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "region": "rr-rr-rr",
+                "metrics": [
+                    [ { "expression": "IF(m2_0 !=0, (m1_0 / m2_0) * 1000, 0)", "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)" } ],
+                    [ "AWS/EBS", "VolumeTotalWriteTime", "VolumeId", "vol-zzzzzz", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m1_0", "visible": false } ],
+                    [ ".", "VolumeWriteOps", ".", ".", { "label": "vol-zzzzzz (do-not-delete-rds-custom-rds-custom-2-storage)", "id": "m2_0", "visible": false } ]
+                ],
+                "title": "Average write latency (ms/op)"
+            }
+        },
+        {
+            "height": 8,
+            "width": 8,
+            "y": 2,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/EC2", "CPUUtilization", "InstanceId", "i-xxxxxx" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "stat": "Average",
+                "period": 60
+            }
+        },
+        {
+            "height": 2,
+            "width": 24,
+            "y": 0,
+            "x": 0,
+            "type": "text",
+            "properties": {
+                "markdown": "# RDS Custom SQL Server\n# Host Metrics"
+            }
+        },
+        {
+            "height": 2,
+            "width": 24,
+            "y": 10,
+            "x": 0,
+            "type": "text",
+            "properties": {
+                "markdown": "## Workload Metrics\n"
+            }
+        },
+        {
+            "height": 2,
+            "width": 24,
+            "y": 20,
+            "x": 0,
+            "type": "text",
+            "properties": {
+                "markdown": "## Performance Metrics\n"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 16,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "SQLServer:General Statistics User Connections", "InstanceId", "i-xxxxxx", "objectname", "SQLServer:General Statistics", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "title": "User Connections",
+                "period": 60,
+                "stat": "Sum"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 16,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "SQLServer:General Statistics Logical Connections", "InstanceId", "i-xxxxxx", "objectname", "SQLServer:General Statistics", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "title": "Logical Connections",
+                "period": 60,
+                "stat": "Sum"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 16,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "SQLServer:General Statistics Connection Reset/sec", "InstanceId", "i-xxxxxx", "objectname", "SQLServer:General Statistics", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "title": "Connection Reset/sec",
+                "period": 60,
+                "stat": "Sum"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 16,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "SQLServer:Buffer Manager Buffer cache hit ratio", "InstanceId", "i-xxxxxx", "objectname", "SQLServer:Buffer Manager", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "title": "Buffer cache hit ratio",
+                "period": 60,
+                "stat": "Sum"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 12,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/EBS", "VolumeWriteOps", "VolumeId", "vol-zzzzzz" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "period": 60,
+                "title": "WriteIOps",
+                "stat": "Average"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 12,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/EBS", "VolumeReadOps", "VolumeId", "vol-zzzzzz" ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "rr-rr-rr",
+                "period": 60,
+                "stat": "Average",
+                "title": "ReadIOps"
+            }
+        },
+        {
+            "height": 4,
+            "width": 8,
+            "y": 2,
+            "x": 16,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "LogicalDisk Free Megabytes", "instance", "D:", "InstanceId", "i-xxxxxx", "objectname", "LogicalDisk", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "rr-rr-rr",
+                "title": "Free Space [D] Drive",
+                "period": 60,
+                "stat": "Average"
+            }
+        },
+        {
+            "height": 4,
+            "width": 8,
+            "y": 2,
+            "x": 8,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "LogicalDisk Free Megabytes", "instance", "C:", "InstanceId", "i-xxxxxx", "objectname", "LogicalDisk", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "rr-rr-rr",
+                "title": "Free Space [C] Drive",
+                "period": 60,
+                "stat": "Average"
+            }
+        },
+        {
+            "height": 4,
+            "width": 16,
+            "y": 6,
+            "x": 8,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "RDSCustom", "Memory Available MBytes", "InstanceId", "i-xxxxxx", "objectname", "Memory", "ImageId", "ami-yyyyyy" ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "rr-rr-rr",
+                "period": 300
+            }
+        }
+    ]
+}

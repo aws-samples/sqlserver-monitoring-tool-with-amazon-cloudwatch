@@ -1,0 +1,41 @@
+{
+	"agent": {
+		"metrics_collection_interval": 60,
+		"logfile": "c:\\ProgramData\\Amazon\\AmazonCloudWatchAgent\\Logs\\amazon-cloudwatch-agent.log"
+	},
+	"metrics": {
+		"namespace": "RDSCustom",
+		"metrics_collected": {
+			"Memory": {
+            			"measurement": [
+             				 {"name": "Available MBytes", "unit": "Megabytes"}
+            ]
+          },
+			"SQLServer:General Statistics": {
+				"measurement": [
+					"User Connections",
+					"Logical Connections",
+					"Connection Reset/sec"
+				]
+			},
+			"SQLServer:Buffer Manager":{
+				"measurement":[
+				  "Buffer cache hit ratio"
+				]
+			 },
+			"LogicalDisk": {
+				"measurement": [
+					{"name": "Free Megabytes", "unit": "Megabytes"}
+				],
+				"resources": [
+					"*"
+				]
+			}
+		},
+		"append_dimensions": {
+			"ImageId": "${aws:ImageId}",
+			"InstanceId": "${aws:InstanceId}",
+			"AutoScalingGroupName": "${aws:AutoScalingGroupName}"
+		}
+	}
+}
