@@ -79,14 +79,14 @@ If both commands run successfully, we can confirm all permissions are setup corr
 -   cw-agent.json : This script collects memory, TCP connections and other metrics from Performance Monitor to publish in the custom CloudWatch namespace.
 -    dashboardconfig.json : This is the dashboard configuration file. It fetches raw data from the AWS/EC2 , AWS/EBS, and Custom namespaces and performs mathematical calculations to display CloudWatch metrics on the dashboard.
     
-![Files](files.jpg)
+![Files](Files.png)
 
 
 ### Execute Automation
 1. To execute the ps1 script, open PowerShell terminal as Administrator and run the following command
 
 2. The script will prompt for CloudWatch dashboard name, provide a name and press enter.
-![Install](installer.jpg)
+![Install](installer.png)
 
 3. The Automation will configure the CloudWatch Agent, Start the CloudWatch Agent and Create the RDS Custom dashboard. You can confirm the creation of the dashboard by using the AWS CloudWatch Console
 
@@ -94,9 +94,9 @@ If both commands run successfully, we can confirm all permissions are setup corr
 
 ### View the CloudWatch Metrics
 Navigate to CloudWatch console and Click on Dashboard. This will show you the list of all dashboard.
-![Metric1](dash1.jpg)
-![Metric12](dash2.jpg)
-![Metric13](dash3.jpg)
+![Metric1](dash1.png)
+![Metric12](dash2.png)
+![Metric13](dash3.png)
 
 ## Contributors 
 - Arnab Saha 
